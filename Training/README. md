@@ -1,0 +1,9 @@
+# Training
+
+Training pipeline for PeriMatrix AI.
+
+Stages:
+- Dataset
+- Preprocessing
+- Fine-tuning
+- Evaluation
