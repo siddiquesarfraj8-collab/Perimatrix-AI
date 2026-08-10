@@ -1,5 +1,5 @@
-
 from fastapi import FastAPI
+from backend.Api.agents import router as agents_router
 
 app = FastAPI(
     title="PeriMatrix AI",
@@ -7,6 +7,8 @@ app = FastAPI(
     version="0.1.0",
 )
 
+# Register the AI agent collaboration squad routes
+app.include_router(agents_router)
 
 @app.get("/")
 def root():
