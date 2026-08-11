@@ -78,3 +78,17 @@ def test_fastapi_endpoints():
     assert collab_data["session_id"] == "api-session-123"
     assert len(collab_data["subtasks"]) > 0
     assert "final_solution" in collab_data
+
+def test_chat_endpoint():
+    chat_payload = {
+        "session_id": "chat-demo-123",
+        "message": "Design a new caching layer for the database operations"
+    }
+    response = client.post("/chat/", json=chat_payload)
+    assert response.status_code == 200
+    data = response.json()
+    assert data["session_id"] == "chat-demo-123"
+    assert "final_answer" in data
+    assert "subtasks" in data
+    assert "execution_steps" in data
+    assert len(data["subtasks"]) > 0
