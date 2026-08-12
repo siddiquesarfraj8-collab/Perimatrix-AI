@@ -115,7 +115,7 @@ class AgentCollaborationTeam:
 
         final_solution = self.provider.generate(
             prompt=synthesis_prompt,
-            system_message="You are the Lead PeriMatrix Orchestrator synthesizing multi-agent results."
+            system_message="You are the Lead Gen Alpha Orchestrator synthesizing multi-agent results."
         )
 
         # Store final response

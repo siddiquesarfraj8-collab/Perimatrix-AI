@@ -21,7 +21,7 @@ def print_separator(title: str = ""):
         print("\n" + "=" * width)
 
 def run_cli():
-    print_separator("PeriMatrix AI Agent Collaboration CLI")
+    print_separator("Gen Alpha Agent Collaboration CLI")
     print("Welcome! Aapki specialized engineering team tayyar hai.")
     print("Aap jo bhi task/feature PeriMatrix AI ke liye banana chahte hain,")
     print("wo yahan type karein. Humare specialized agents milkar use solve karenge!")

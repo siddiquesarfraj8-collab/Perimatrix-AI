@@ -67,7 +67,7 @@ class LLMProvider:
         # Check if we are synthesizing responses
         if "synthesize" in prompt_lower or "combine" in prompt_lower or "final" in prompt_lower:
             return (
-                f"### PeriMatrix AI Collaboration Team - Final Report\n\n"
+                f"### Gen Alpha Collaboration Team - Final Report\n\n"
                 f"We have successfully collaborated to address your request: \"{prompt[:60]}...\".\n\n"
                 f"1. **Research & Requirements**: Analyzed the specs and selected optimal designs.\n"
                 f"2. **Implementation & Code**: Generated modular and clean code components.\n"
