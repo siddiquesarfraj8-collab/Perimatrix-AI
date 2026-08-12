@@ -78,3 +78,29 @@ def test_fastapi_endpoints():
     assert collab_data["session_id"] == "api-session-123"
     assert len(collab_data["subtasks"]) > 0
     assert "final_solution" in collab_data
+
+def test_chat_endpoint():
+    # Test POST /chat with message and custom session
+    chat_payload = {
+        "message": "Let's build a clean codebase for PeriMatrix",
+        "session_id": "chat-session-456"
+    }
+    chat_res = client.post("/chat", json=chat_payload)
+    assert chat_res.status_code == 200
+    chat_data = chat_res.json()
+    assert chat_data["session_id"] == "chat-session-456"
+    assert chat_data["problem"] == "Let's build a clean codebase for PeriMatrix"
+    assert len(chat_data["subtasks"]) > 0
+    assert "final_solution" in chat_data
+
+    # Test POST /chat with default session_id
+    chat_payload_default = {
+        "message": "Tell me a joke about agents"
+    }
+    chat_res_default = client.post("/chat", json=chat_payload_default)
+    assert chat_res_default.status_code == 200
+    chat_data_default = chat_res_default.json()
+    assert chat_data_default["session_id"] == "default_session"
+    assert chat_data_default["problem"] == "Tell me a joke about agents"
+    assert len(chat_data_default["subtasks"]) > 0
+    assert "final_solution" in chat_data_default
